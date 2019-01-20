@@ -27,6 +27,8 @@ public class PagesAdapter extends FragmentStatePagerAdapter {
         fragmentManagers.add(new JobRecruitmentsFragment());
         fragmentManagers.add(new OpeningSchedulerFragment());
         fragmentManagers.add(new IntroducesFragment());
+
+        // active fragement object in interface class
         fragmentManagers.add(new InfoUserFragment());
         getDataUser.getDataUser(new InfoUserFragment());
     }

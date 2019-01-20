@@ -151,9 +151,9 @@ public class Main_Activity extends AppCompatActivity implements getDataUser {
 
     //implements interface
     /*
-     * Truyen bundle fragment trong viewpager
+     * Get userName, userID when user login success to send from activity to InfoUser fragment.
+     * _ set fragment object for acitve fragment in adapter class
      * */
-
     @Override
     public void getDataUser(Fragment fragment) {
         Intent intent = getIntent();

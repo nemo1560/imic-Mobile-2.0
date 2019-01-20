@@ -2,7 +2,7 @@ package com.example.hhh.imicmo2.Services;
 
 import com.example.hhh.imicmo2.Entities.DeveloperEntity;
 import com.example.hhh.imicmo2.Entities.MetaData;
-import com.example.hhh.imicmo2.Entities.OpeningSchedulerEntity;
+import com.example.hhh.imicmo2.Entities.OpeningScheduler;
 import com.example.hhh.imicmo2.Entities.VideoGroupEntity;
 
 import retrofit2.Call;
@@ -13,7 +13,7 @@ public interface ResponseService {
     Call<MetaData<VideoGroupEntity>> getVideoGroup();
 
     @GET("api/getOpeningScheduler")
-    Call<MetaData<OpeningSchedulerEntity>> getOpeningScheduler();
+    Call<MetaData<OpeningScheduler>> getOpeningScheduler();
 
     @GET("api/getDeveloper")
     Call<MetaData<DeveloperEntity>> getDeveloper();
