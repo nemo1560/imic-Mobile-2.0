@@ -1,0 +1,17 @@
+1. Class: Đặt tên class java thì đặt tên file trước kiểu tên class sau
+Vd: MainActivity, TextFragment v.v...
+2. Layout: Đặt kiểu tên class trước, tên file layout sau
+Vd: activity_main.xml, fragment_tenfile.xml v.v...
+3. Folder: Luôn có s thể hiện số nhiều. Thường một dự án sẽ có một số folder thông dụng sau:
+	+ Folder tổ chức kiến trúc: vd như mvp thì chắc chắn sẽ có 3 folder là views, presenters, models
+	+ Folder Adapters: Cái này tự hiểu
+	+ Folder Utilities: các file trong folder này được gọi và sử dụng chung cho toàn bộ dự án thì để trong đây. Vd: constants chứa các thuộc tính final static, trong kotlin thì đặt là const val...
+	+ Folder Services: Thường để các class gọi API SERVICES, tạo database ...có thể sử dụng singleton trong đây
+	+ Folder Entities: Tạo các đối tượng trong đây, có thể dùng singleton để lưu giá trị tạm thời và sử dụng chung.
+	+ Folder Fragments
+
+4. Khi đặt id cho các view thì nguyên tắc đặt như sau:
+      + Đặt tên kiểu view trước, sau đó là tên file theo chức năng, cuối cùng là tên viết tắt của layout chứa view đó
+
+Vd: trong activity_main có một view là EditText có chức năng là nhập username ta đặt như sau:
+		edtUserNameMain

@@ -13,8 +13,10 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.hhh.imicmo2.Entities.Result;
 import com.example.hhh.imicmo2.Entities.StatusUser;
 import com.example.hhh.imicmo2.Main_Activity;
+import com.example.hhh.imicmo2.Presenters.LoginFragment.LoginFragmentView;
 import com.example.hhh.imicmo2.R;
 import com.example.hhh.imicmo2.Views.Activities.SigninActivity;
 
