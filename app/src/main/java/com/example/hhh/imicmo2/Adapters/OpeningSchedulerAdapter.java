@@ -1,6 +1,7 @@
 package com.example.hhh.imicmo2.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,12 +13,15 @@ import android.widget.Toast;
 
 import com.example.hhh.imicmo2.Entities.OpeningScheduler;
 import com.example.hhh.imicmo2.R;
+import com.example.hhh.imicmo2.Views.Activities.DetailOpenschedulerActivity;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 public class OpeningSchedulerAdapter extends RecyclerView.Adapter<OpeningSchedulerAdapter.MyViewHolder> {
     private Context context;
     private List<OpeningScheduler> openingSchedulerList;
+    private Intent intent;
 
     public OpeningSchedulerAdapter(Context context, List<OpeningScheduler> openingSchedulerList) {
         this.context = context;
@@ -32,13 +36,16 @@ public class OpeningSchedulerAdapter extends RecyclerView.Adapter<OpeningSchedul
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
+    public void onBindViewHolder(@NonNull final MyViewHolder myViewHolder, int i) {
+        Picasso.get().load(openingSchedulerList.get(i).getImageLink()).into(myViewHolder.imgHinhkhaigiang);
         myViewHolder.txtNgaykhaigiang.setText(openingSchedulerList.get(i).getOpenningDate());
         myViewHolder.txtLocation.setText(openingSchedulerList.get(i).getLocation());
         myViewHolder.imgHinhkhaigiang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context,"text",Toast.LENGTH_SHORT).show(); //dang test
+                intent = new Intent(context.getApplicationContext(),DetailOpenschedulerActivity.class);
+                intent.putExtra("OpeningScheduler",openingSchedulerList.get(myViewHolder.getAdapterPosition()));
+                context.startActivity(intent);
             }
         });
     }

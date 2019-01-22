@@ -46,4 +46,8 @@ với sức mạnh của cộng đồng, chúng tôi khao khát không chỉ tha
         cung cấp cho học viên và cộng đồng những trải nghiệm giáo dục tốt nhất trong khu vực, nâng tầm trình độ nhân lực của đất nước. Cùng với cộng đồng về Kinh doanh
          – Kinh tế hàng nghìn thành viên ưu tú nhất đến từ các trường ĐH, công ty, dự án danh giá nhất trên thế giới IMIC góp phần vào sự phát triển của nền kinh tế tri thức và tương lai của Việt Nam.</p>]]>
     </string>
+
+    <string name="title_activity_detail_openscheduler">DetailOpenschedulerActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

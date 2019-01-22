@@ -1,6 +1,8 @@
 package com.example.hhh.imicmo2.Entities;
 
-public class OpeningScheduler {
+import java.io.Serializable;
+
+public class OpeningScheduler implements Serializable {
 
     private String CreateDate;
 
