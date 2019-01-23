@@ -29,8 +29,9 @@ public class PagesAdapter extends FragmentStatePagerAdapter {
         fragmentManagers.add(new IntroducesFragment());
 
         // active fragement object in interface class
-        fragmentManagers.add(new InfoUserFragment());
-        getDataUser.getDataUser(new InfoUserFragment());
+        InfoUserFragment infoUserFragment = new InfoUserFragment();
+        fragmentManagers.add(infoUserFragment);
+        getDataUser.getDataUser(infoUserFragment);
     }
 
     @Override

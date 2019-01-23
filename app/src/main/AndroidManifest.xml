@@ -18,13 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Views.DeveloperActivity.DeveloperActivity"></activity>
+        <activity android:name=".Views.DeveloperActivity.DeveloperActivity"/>
         <activity android:name=".Views.Activities.SigninActivity" />
-        <activity
-            android:name=".Views.Activities.DetailOpenschedulerActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_detail_openscheduler"
-            android:theme="@style/FullscreenTheme"></activity>
+        <activity android:name=".Views.Activities.DetailOpenschedulerActivity"/>
     </application>
 
 </manifest>

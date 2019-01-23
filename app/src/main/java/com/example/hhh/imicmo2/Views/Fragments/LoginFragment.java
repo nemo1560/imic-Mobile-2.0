@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.hhh.imicmo2.Entities.Result;
+import com.example.hhh.imicmo2.Main_Activity;
 import com.example.hhh.imicmo2.Presenters.LoginFragment.LoginFragmentView;
 import com.example.hhh.imicmo2.Presenters.LoginFragment.LoginPresenter;
 import com.example.hhh.imicmo2.R;
@@ -80,8 +81,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener, Log
         Intent intent = new Intent();
         intent.putExtra("aCheck",aCheck);
         intent.putExtra("result",result);
-        Toast.makeText(getActivity(),String.valueOf(aCheck),Toast.LENGTH_SHORT).show();
-        getActivity().setResult(100,intent); //tao phan hoi intent
+        getActivity().setResult(100,intent); //create intent feedback
         getActivity().finish();
     }
 

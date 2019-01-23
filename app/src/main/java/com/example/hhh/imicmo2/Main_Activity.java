@@ -11,6 +11,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -150,9 +151,9 @@ public class Main_Activity extends AppCompatActivity implements getDataUser {
 
 
     //implements interface
-    /*
-     * Get userName, userID when user login success to send from activity to InfoUser fragment.
-     * _ set fragment object for acitve fragment in adapter class
+    /* _get intent from InfoUserFragment
+     * _get userName, userID when user login success and send from activity to InfoUser fragment for change status info layout.
+     * _set fragment object for active fragment in adapter class
      * */
     @Override
     public void getDataUser(Fragment fragment) {

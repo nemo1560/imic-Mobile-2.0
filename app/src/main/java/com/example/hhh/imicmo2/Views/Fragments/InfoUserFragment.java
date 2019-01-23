@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,13 +28,13 @@ import butterknife.ButterKnife;
  * code by Hao
  * */
 public class InfoUserFragment extends android.support.v4.app.Fragment implements View.OnClickListener {
-    FrameLayout log_in_frameLayout;
-    FrameLayout logged_in_frameLayout;
+    private FrameLayout log_in_frameLayout;
+    private FrameLayout logged_in_frameLayout;
     @BindView(R.id.log_in) Button log_in;
     @BindView(R.id.log_out) Button log_out;
     @BindView(R.id.user_logged_in) TextView user_logged_in;
-    static boolean aCheck;
-    static String name;
+    private static boolean aCheck;
+    private Result result;
 
     public InfoUserFragment() {
 
@@ -57,23 +58,26 @@ public class InfoUserFragment extends android.support.v4.app.Fragment implements
             log_in.setOnClickListener(this);
         }
         else {
-            Toast.makeText(getActivity(),name,Toast.LENGTH_SHORT).show();
-            user_logged_in.setText(name);
-            log_in_frameLayout.setVisibility(View.INVISIBLE);
-            logged_in_frameLayout.setVisibility(View.VISIBLE);
-            log_out.setOnClickListener(this);
+            if(getArguments()!= null){ // get bundle from activity for set userName
+                String name = getArguments().getString("accountName");
+                Toast.makeText(getActivity(),name,Toast.LENGTH_SHORT).show();
+                user_logged_in.setText(name);
+                log_in_frameLayout.setVisibility(View.INVISIBLE);
+                logged_in_frameLayout.setVisibility(View.VISIBLE);
+                log_out.setOnClickListener(this);
+            }
         }
     }
 
-    //Class intent cho phan hoi ve
+    //Class get intent feedback
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == 100 && resultCode == 100){
             aCheck = data.getBooleanExtra("aCheck",false);
-            StatusUser statusUser = new StatusUser();
-            statusUser.setaCheck(aCheck);
-            name = data.getStringExtra("name");
+            Intent intent = new Intent(getActivity(),Main_Activity.class); // put intent to main_Activity
+            intent.putExtra("result",data.getSerializableExtra("result"));
+            startActivity(intent);
         }
     }
 
@@ -81,7 +85,7 @@ public class InfoUserFragment extends android.support.v4.app.Fragment implements
     public void onClick(View v) {
         if (v.getId() == log_in.getId()) {
             Intent intent = new Intent(getActivity(),SigninActivity.class);
-            startActivityForResult(intent,100);
+            startActivityForResult(intent,100); //intent waiting to feedback
         }
         if (v.getId() == log_out.getId()) {
             aCheck = false;
