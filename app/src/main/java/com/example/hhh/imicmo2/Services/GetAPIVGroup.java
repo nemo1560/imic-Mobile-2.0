@@ -8,14 +8,8 @@ import com.example.hhh.imicmo2.Entities.VideoGroupEntity;
 import retrofit2.Call;
 import retrofit2.http.GET;
 
-public interface ResponseService {
+public interface GetAPIVGroup {
     @GET("api/getVGroups")
     Call<MetaData<VideoGroupEntity>> getVideoGroup();
-
-    @GET("api/getOpeningScheduler")
-    Call<MetaData<OpeningScheduler>> getOpeningScheduler();
-
-    @GET("api/getDeveloper")
-    Call<MetaData<DeveloperEntity>> getDeveloper();
 
 }

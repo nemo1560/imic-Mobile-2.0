@@ -14,12 +14,13 @@ import com.example.hhh.imicmo2.Entities.VideoGroupEntity;
 import com.example.hhh.imicmo2.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class VideoGroupAdapter extends RecyclerView.Adapter<VideoGroupAdapter.ViewHolder> {
     private Context context;
-    private ArrayList<VideoGroupEntity> listVGroup;
+    private List<VideoGroupEntity> listVGroup;
 
-    public VideoGroupAdapter(Context context, ArrayList<VideoGroupEntity> listVGroup) {
+    public VideoGroupAdapter(Context context, List<VideoGroupEntity> listVGroup) {
         this.context = context;
         this.listVGroup = listVGroup;
     }

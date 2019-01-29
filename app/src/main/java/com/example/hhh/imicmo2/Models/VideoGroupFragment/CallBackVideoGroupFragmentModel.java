@@ -8,6 +8,5 @@ import java.util.List;
 * lớp CallBack cho Model*/
 public interface CallBackVideoGroupFragmentModel {
     void xuLyGetApiListVideoGroupThanhCong(List<VideoGroupEntity> listVideoGroup);
-
     void xuLyGetApiListVideoGroupThatBai(String sThongBao);
 }
